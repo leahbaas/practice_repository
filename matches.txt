@@ -1,75 +1,75 @@
 {
-     "marfan syndrome loeysdietz syndromes familial thoracic aortic aneurysms dissections": [
-          "marfans syndrome unspecified", 
-          "marfans syndrome with aortic dilation", 
-          "marfans syndrome with other cardiovascular manifestations", 
-          "marfans syndrome with ocular manifestations", 
-          "thoracic aortic aneurysm ruptured", 
-          "thoracic aortic aneurysm without rupture", 
-          "thoracic aortic ectasia"
-     ], 
-     "ehlersdanlos syndrome vascular type": [
-          "ehlersdanlos syndrome"
-     ], 
      "multiple endocrine neoplasia type 1": [
-          "multiple endocrine neoplasia men syndrome unspecified", 
-          "multiple endocrine neoplasia men type i", 
-          "multiple endocrine neoplasia men type iia", 
-          "multiple endocrine neoplasia men type iib", 
-          "genetic susceptibility to multiple endocrine neoplasia men", 
-          "family history of multiple endocrine neoplasia syndrome", 
-          "multiple endocrine neoplasia men syndrome unspecified", 
-          "multiple endocrine neoplasia men type i", 
-          "multiple endocrine neoplasia men type iia", 
-          "multiple endocrine neoplasia men type iib", 
-          "genetic susceptibility to multiple endocrine neoplasia men", 
+          "multiple endocrine neoplasia men syndrome unspecified",
+          "multiple endocrine neoplasia men type i",
+          "multiple endocrine neoplasia men type iia",
+          "multiple endocrine neoplasia men type iib",
+          "genetic susceptibility to multiple endocrine neoplasia men",
+          "family history of multiple endocrine neoplasia syndrome",
+          "multiple endocrine neoplasia men syndrome unspecified",
+          "multiple endocrine neoplasia men type i",
+          "multiple endocrine neoplasia men type iia",
+          "multiple endocrine neoplasia men type iib",
+          "genetic susceptibility to multiple endocrine neoplasia men",
           "family history of multiple endocrine neoplasia syndrome"
-     ], 
+     ],
      "multiple endocrine neoplasia type 2": [
-          "multiple endocrine neoplasia men syndrome unspecified", 
-          "multiple endocrine neoplasia men type i", 
-          "multiple endocrine neoplasia men type iia", 
-          "multiple endocrine neoplasia men type iib", 
-          "genetic susceptibility to multiple endocrine neoplasia men", 
-          "family history of multiple endocrine neoplasia syndrome", 
-          "multiple endocrine neoplasia men syndrome unspecified", 
-          "multiple endocrine neoplasia men type i", 
-          "multiple endocrine neoplasia men type iia", 
-          "multiple endocrine neoplasia men type iib", 
-          "genetic susceptibility to multiple endocrine neoplasia men", 
+          "multiple endocrine neoplasia men syndrome unspecified",
+          "multiple endocrine neoplasia men type i",
+          "multiple endocrine neoplasia men type iia",
+          "multiple endocrine neoplasia men type iib",
+          "genetic susceptibility to multiple endocrine neoplasia men",
+          "family history of multiple endocrine neoplasia syndrome",
+          "multiple endocrine neoplasia men syndrome unspecified",
+          "multiple endocrine neoplasia men type i",
+          "multiple endocrine neoplasia men type iia",
+          "multiple endocrine neoplasia men type iib",
+          "genetic susceptibility to multiple endocrine neoplasia men",
           "family history of multiple endocrine neoplasia syndrome"
-     ], 
-     "romanoward longqt syndrome types 1 2 3 brugada syndrome": [
-          "s42221s 2part disp fx of surgical neck of right humerus sequela", 
-          "z3a21 21 weeks gestation of pregnancy", 
-          "z3a32 32 weeks gestation of pregnancy"
-     ], 
-     "neurofibromatosis type 2": [
-          "neurofibromatosis type 1", 
-          "neurofibromatosis type 2"
-     ], 
-     "familial hypercholesterolemia": [
-          "familial hypercholesterolemia", 
-          "family history of familial hypercholesterolemia"
-     ], 
-     "wilson disease": [
-          "wilsons disease"
-     ], 
+     ],
      "tuberous sclerosis complex": [
           "tuberous sclerosis"
-     ], 
+     ],
+     "neurofibromatosis type 2": [
+          "neurofibromatosis type 1",
+          "neurofibromatosis type 2"
+     ],
+     "ehlersdanlos syndrome vascular type": [
+          "ehlersdanlos syndrome"
+     ],
+     "marfan syndrome loeysdietz syndromes familial thoracic aortic aneurysms dissections": [
+          "marfans syndrome unspecified",
+          "marfans syndrome with aortic dilation",
+          "marfans syndrome with other cardiovascular manifestations",
+          "marfans syndrome with ocular manifestations",
+          "thoracic aortic aneurysm ruptured",
+          "thoracic aortic aneurysm without rupture",
+          "thoracic aortic ectasia"
+     ],
      "hypertrophic cardiomyopathy dilated cardiomyopathy": [
-          "obstructive hypertrophic cardiomyopathy", 
-          "other hypertrophic cardiomyopathy", 
+          "obstructive hypertrophic cardiomyopathy",
+          "other hypertrophic cardiomyopathy",
           "dilated cardiomyopathy"
-     ], 
+     ],
      "catecholaminergic polymorphic ventricular tachycardia": [
-          "supraventricular tachycardia", 
+          "supraventricular tachycardia",
           "ventricular tachycardia"
-     ], 
+     ],
+     "romanoward longqt syndrome types 1 2 3 brugada syndrome": [
+          "s42221s 2part disp fx of surgical neck of right humerus sequela",
+          "z3a21 21 weeks gestation of pregnancy",
+          "z3a32 32 weeks gestation of pregnancy"
+     ],
+     "familial hypercholesterolemia": [
+          "familial hypercholesterolemia",
+          "family history of familial hypercholesterolemia"
+     ],
+     "wilson disease": [
+          "wilsons disease"
+     ],
      "malignant hyperthermia susceptibility": [
-          "t883xxa malignant hyperthermia due to anesthesia initial encounter", 
-          "t883xxd malignant hyperthermia due to anesthesia subs encntr", 
+          "t883xxa malignant hyperthermia due to anesthesia initial encounter",
+          "t883xxd malignant hyperthermia due to anesthesia subs encntr",
           "t883xxs malignant hyperthermia due to anesthesia sequela"
      ]
 }

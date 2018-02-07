@@ -2,24 +2,30 @@ import re
 import json
 import string
 
-#Step 1: Create list of ACMG59-associated diseases
+# 2/7/2018: Configured Atom to run scripts with Python3 as default. Added the following code (lines 6-8) to confirm successful configuration.
+import sys
+print(sys.executable)
+print(sys.version)
+
+# Step 1: Create list of ACMG59-associated diseases
 f = open("acmg59list.txt", "r")
-ACMG59_diseases=[]
+ACMG59_diseases = []
 
 for line in f.readlines():
     if line == "":
         pass
     b = line.split("\t")
     ACMG59_diseases.append(b[0])
-#print(ACMG59_diseases)
+# print(ACMG59_diseases)
 
-#Step 1b: For each string in ACMG59_diseases: 1) remove all punctuation, 2) remove leading/trailing whitespaces, 3) make all letters lowercase, 4) split string into list of tokens, 5) remove stopwords
+# Step 1b: For each string in ACMG59_diseases: 1) remove all punctuation, 2) remove leading/trailing whitespaces, 3) make all letters lowercase, 4) split string into list of tokens, 5) remove stopwords
 
 ACMG59_diseases_clean = []
 stopwords = ['and', 'with']
 
 for x in ACMG59_diseases:
-    b = x.strip('"').translate(None, string.punctuation).strip().lower().split()
+    # 2/7/2018: This line was giving an error when run w/ Python3 b/c the translate() method works differently in Python3 vs Python2. Modified to resolve error.
+    b = x.strip('"').translate(str.maketrans('', '', string.punctuation)).strip().lower().split()
     for y in b:
         if y in stopwords:
             b.remove(y)
@@ -28,7 +34,7 @@ for x in ACMG59_diseases:
 
 print(ACMG59_diseases_clean)
 
-#Step 2: Create list of Sanford ICD10 code diseases
+# Step 2: Create list of Sanford ICD10 code diseases
 f1 = open("ICD10list.txt", "r")
 
 lines_file = 0
@@ -39,29 +45,32 @@ for line in f1:
     lines_file = lines_file + 1
     result = re.split(r'^[\"]*[A-Z][0-9]+[.]*[0-9]*\s|\t[0-9]+[,]*[0-9]*\n*', line)
     lines_read.append(result)
-    #print(result)
+    # print(result)
     Sanford_diseases.extend(result)
 
-#print(len(lines_read))
-#print(lines_file)
-#print(Sanford_diseases)
+# print(len(lines_read))
+# print(lines_file)
+# print(Sanford_diseases)
 
-#Step 3a: Clean up Sanford_diseases list by removing ''
+# Step 3a: Clean up Sanford_diseases list by removing ''
+
+
 def remove_all(elements, list):
     return filter(lambda x: x not in elements, list)
 
 
 Sanford_diseases1 = remove_all((''), Sanford_diseases)
-#print(Sanford_diseases1)
+# print(Sanford_diseases1)
 
-#Step 3b: Remove punctuation and trailing/leading whitespaces from elements in Sanford_diseases_clean, and make all letters lowercase.
-Sanford_diseases_clean = [x.strip().translate(None, string.punctuation).lower() for x in Sanford_diseases1]
-#print(Sanford_diseases_clean)
+# Step 3b: Remove punctuation and trailing/leading whitespaces from elements in Sanford_diseases_clean, and make all letters lowercase.
+Sanford_diseases_clean = [x.strip().translate(str.maketrans('', '', string.punctuation)).lower()
+                          for x in Sanford_diseases1]  # 2/7/2018: This line was giving an error when run w/ Python3 b/c the translate() method works differently in Python3 vs Python2. Modified to resolve error.
+# print(Sanford_diseases_clean)
 
 
-#Step 4:
-#For each bigram in each ACMG59 disease name, see if that bigram appears in 1 or more ICD10 disease names. Exclude stopwords.
-    #If yes, record the match in matches{} (key = ACMG59 disease name; values = ICD10 diseases containing one or bigrams in common with ACMG59 disease name).
+# Step 4:
+# For each bigram in each ACMG59 disease name, see if that bigram appears in 1 or more ICD10 disease names. Exclude stopwords.
+# If yes, record the match in matches{} (key = ACMG59 disease name; values = ICD10 diseases containing one or bigrams in common with ACMG59 disease name).
 
 matches = {}
 temp = ""
@@ -69,9 +78,11 @@ temp2 = ""
 
 for sublist in ACMG59_diseases_clean:
     for index in range(len(sublist)-1):
-        temp = sublist[index] + ' ' + sublist[index+1] #Important: Make sure to initiate string before starting loop!
-        temp2 = sublist[index] + "s " + sublist[index+1] #Added to match Wilsons disease and Marfans syndrome
-        if re.search(r'type \d', temp) or re.search(r'type \d', temp2): #Added regex to address 'Type \d' problem
+        # Important: Make sure to initiate string before starting loop!
+        temp = sublist[index] + ' ' + sublist[index+1]
+        # Added to match Wilsons disease and Marfans syndrome
+        temp2 = sublist[index] + "s " + sublist[index+1]
+        if re.search(r'type \d', temp) or re.search(r'type \d', temp2):  # Added regex to address 'Type \d' problem
             continue
         for disease in Sanford_diseases_clean:
             if temp in disease or temp2 in disease:
@@ -83,7 +94,8 @@ for sublist in ACMG59_diseases_clean:
                     matches[entry].append(disease)
 
 print(matches)
-print(sum(len(v) for v in matches.itervalues()))
+# 2/7/2018: This line was giving an error when run w/ Python3 b/c itervalues() was replaced with values() in Python3. Modified code to resolve error.
+print(sum(len(v) for v in matches.values()))
 
 with open('matches.txt', 'w') as file:
     file.write(json.dumps(matches, indent=5))

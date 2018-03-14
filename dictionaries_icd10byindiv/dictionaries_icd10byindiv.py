@@ -2,7 +2,7 @@ import xlrd
 import pickle
 import json
 
-file_location = "/home/leah/src/practice_repository/exercise2/icd10_byindiv.xlsx"
+file_location = "/home/leah/src/practice_repository/dictionaries_icd10byindiv/icd10_byindiv.xlsx"
 workbook = xlrd.open_workbook(file_location)
 sheet = workbook.sheet_by_index(2)
 #print(sheet.cell_value(0, 0))
@@ -73,10 +73,10 @@ test_code = pickle.load(pickle_in_code)
 #print(test_code)
 
 #Step 4: Write dictionaries to text files so that you can view the output
-with open('exercise2_dict_mrn.txt', 'w') as file:
+with open('dict_mrn.txt', 'w') as file:
     file.write(json.dumps(test_mrn, indent=5))
 
-with open('exercise2_dict_code.txt', 'w') as file:
+with open('dict_code.txt', 'w') as file:
     file.write(json.dumps(test_code, indent=5))
 
 #Step 5: Sanity Checks
